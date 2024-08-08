@@ -24,6 +24,7 @@
       <q-page-container v-if="gifs.length">
         <div class="row q-col-gutter-md q-mb-md">
           <div v-for="gif in gifs" :key="gif.id" class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <q-icon @click="toggleFavorite(gif)" name="favorite" />
             <q-img :src="gif.images.fixed_height.url" :alt="gif.title" class="q-mb-md" :ratio="16 / 9"
               @click="toggleFavorite(gif)">
               <template v-slot:after>
@@ -101,6 +102,10 @@ onMounted(() => {
 
   .q-page-container {
     @apply flex flex-wrap justify-between;
+  }
+
+  .q-icon {
+    @apply text-[red] cursor-pointer text-2xl transition-[0.1s] duration-[ease-in-out];
   }
 }
 
