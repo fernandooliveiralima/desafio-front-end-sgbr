@@ -1,17 +1,9 @@
 <template>
   <q-page>
-    <!-- <q-header elevated>
-      <span>Logo</span>
-    </q-header>
-
+    
     <q-toolbar>
       <q-toolbar-title>
-        Favorites Page
-      </q-toolbar-title>
-    </q-toolbar> -->
-    <q-toolbar>
-      <q-toolbar-title>
-        Favorites Page
+        Pagina Favoritos
       </q-toolbar-title>
     </q-toolbar>
 
@@ -24,7 +16,8 @@
         </q-item-section>
         <q-item-section>
           <div>{{ gif.title }}</div>
-          <q-btn icon="favorite" color="red" @click.stop="removeFavorite(gif.id)" />
+          <!-- <q-btn icon="favorite" color="red" @click.stop="removeFavorite(gif.id)" /> -->
+           <trashIconC @click.stop="removeFavorite(gif.id)"></trashIconC>
         </q-item-section>
       </q-item>
     </q-list>
@@ -34,6 +27,7 @@
 <script setup>
 import { storeToRefs } from 'pinia';
 import { useApiGyphyStore } from '../stores/apiGiphy-store.js';
+import trashIconC from '../components/trashIconC.vue';
 
 const store = useApiGyphyStore();
 const { favorites } = storeToRefs(store);
@@ -43,4 +37,4 @@ const removeFavorite = (gifId) => {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped></style>

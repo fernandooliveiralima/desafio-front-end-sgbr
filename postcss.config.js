@@ -25,5 +25,9 @@ module.exports = {
     // 2. optionally set quasar.config.js > framework > lang to an RTL language
     // 3. uncomment the following line:
     // require('postcss-rtlcss')
-  ]
+    
+    require('tailwindcss'),
+    require('autoprefixer')
+  ],
+  
 }
