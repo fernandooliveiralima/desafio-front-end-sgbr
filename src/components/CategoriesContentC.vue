@@ -25,8 +25,7 @@
         <div class="row q-col-gutter-md q-mb-md">
           <div v-for="gif in gifs" :key="gif.id" class="col-12 col-sm-6 col-md-4 col-lg-3">
             <q-icon @click="toggleFavorite(gif)" name="favorite" />
-            <q-img :src="gif.images.fixed_height.url" :alt="gif.title" class="q-mb-md" :ratio="16 / 9"
-              @click="toggleFavorite(gif)">
+            <q-img :src="gif.images.fixed_height.url" :alt="gif.title" class="q-mb-md" :ratio="16 / 9">
               <template v-slot:after>
                 <q-btn icon="favorite" :color="isFavorite(gif) ? 'red' : 'white'" round dense flat
                   @click.stop="toggleFavorite(gif)" />
