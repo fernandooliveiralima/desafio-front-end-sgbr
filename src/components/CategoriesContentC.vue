@@ -11,7 +11,7 @@
     <div class="col-3 category-menu">
 
       <q-list bordered>
-        <q-item-label header>CATEGORIES</q-item-label>
+        <q-item-label header>CATEGORIAS</q-item-label>
         <q-item v-for="category in categories" :key="category.name" clickable
           @click="fetchGifsByCategory(category.name)">
           <q-item-section>{{ category.name }}</q-item-section>

@@ -11,7 +11,7 @@ export const useApiGyphyStore = defineStore('ApiGyphy', () => {
   const categories = ref([]);
 
   /* função para buscar gifs por nomes */
-  const getAllGifs = async (query = '') => {
+  const getGifsByName = async (query = '') => {
     try {
       const response = await axios.get(`https://api.giphy.com/v1/gifs/search`, {
         params: {
@@ -96,7 +96,7 @@ export const useApiGyphyStore = defineStore('ApiGyphy', () => {
     favorites,
     categories,
     
-    getAllGifs,
+    getGifsByName,
     getCategories,
     getGifsByCategory,
     addFavorite,

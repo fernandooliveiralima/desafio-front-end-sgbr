@@ -10,7 +10,7 @@ const { favorites, gifs } = storeToRefs(store);
 const searchQuery = ref('');
 
 const searchGifs = async () => {
-  await store.getAllGifs(searchQuery.value);
+  await store.getGifsByName(searchQuery.value);
   searchQuery.value = ''
 };
 
